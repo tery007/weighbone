@@ -9,5 +9,6 @@ public class WechatConstants {
 
     public static final String APP_ID = "wxa09bebf121d2508a";
     public static final String SECRET = "34d58de5a4f94bda8ae66c0203225601";
+    public static final String TOKEN  = "impxjgj34age";
 
 }
