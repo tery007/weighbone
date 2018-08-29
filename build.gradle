@@ -35,6 +35,7 @@ dependencies {
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
     compile fileTree(dir:'lib',includes:['*.jar'])
     compileOnly "org.springframework.boot:spring-boot-configuration-processor"
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.22'
