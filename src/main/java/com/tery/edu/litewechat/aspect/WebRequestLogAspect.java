@@ -34,7 +34,6 @@ public class WebRequestLogAspect extends HandlerInterceptorAdapter {
     @Before("webRequestLog()")
     public void before(JoinPoint point) {
         try {
-            long beginTime = System.currentTimeMillis();
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             HttpServletRequest request = attributes.getRequest();
             String className = point.getSignature().getDeclaringTypeName();
