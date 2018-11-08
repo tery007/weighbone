@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>称骨</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+<script type="text/javascript"   src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+
+</script>
+
+    <body>
+        <form action="#" th:action="@{/wb/weightBone}" th:object="${userReq}" method="post">
+            <label>姓名：</label><br/>
+            <input type="text" id="datePlanted" name="userName" th:value="*{userName}" style="align-items: center;width: 120px;" /><br/>
+            <label>公历生日：</label><br/>
+            <select th:field="*{bYear}">
+                <option th:each="year : *{years}" th:value="${year}" th:text="${year}"></option>
+            </select>
+            <select th:field="*{bMonth}">
+                <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
+            </select><br/>
+            <select th:field="*{bDay}">
+                <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
+            </select><br/>
+            <select th:field="*{bHour}">
+                <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
+            </select><br/>
+            <select th:field="*{bMinute}">
+                <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
+            </select><br/>
+
+
+            <label>性别：</label><br/>
+            <select th:field="*{gender}">
+                <option th:value=0 th:text="请选择">---请选择---</option>
+                <option th:value=1 th:text="男">男</option>
+                <option th:value=2 th:text="女">女</option>
+            </select><br/>
+            <input type="submit" >
+
+        </form>
+    </body>
+</html>

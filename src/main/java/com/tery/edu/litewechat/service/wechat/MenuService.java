@@ -1,10 +1,12 @@
-package com.tery.edu.litewechat.service;
+package com.tery.edu.litewechat.service.wechat;
 
 import com.github.sd4324530.fastweixin.api.MenuAPI;
+import com.github.sd4324530.fastweixin.api.OauthAPI;
 import com.github.sd4324530.fastweixin.api.config.ApiConfig;
 import com.github.sd4324530.fastweixin.api.entity.Menu;
 import com.github.sd4324530.fastweixin.api.entity.MenuButton;
 import com.github.sd4324530.fastweixin.api.enums.MenuType;
+import com.github.sd4324530.fastweixin.api.enums.OauthScope;
 import com.github.sd4324530.fastweixin.api.enums.ResultType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,6 +24,8 @@ public class MenuService implements InitializingBean {
 
     @Autowired
     private ApiConfig config;
+    @Autowired
+    private OauthAPI  oauthAPI;
 
     @Override
     public void afterPropertiesSet() {
@@ -38,13 +42,14 @@ public class MenuService implements InitializingBean {
             main1.setType(MenuType.CLICK);
 
             MenuButton main1_sub1 = new MenuButton();
-            main1_sub1.setType(MenuType.CLICK);
-            main1_sub1.setName("称骨算命");
+            main1_sub1.setType(MenuType.VIEW);
+            main1_sub1.setUrl(oauthAPI.getOauthPageUrl("http://golum.wang/wb/init", OauthScope.SNSAPI_USERINFO, "STATE"));
+            main1_sub1.setName("称骨");
             main1_sub1.setKey("main1_sub");
 
             MenuButton main1_sub2 = new MenuButton();
             main1_sub2.setType(MenuType.CLICK);
-            main1_sub2.setName("手纹知命");
+            main1_sub2.setName("手纹");
             main1_sub2.setKey("main1_sub");
 
             main1.setSubButton(Arrays.asList(main1_sub1, main1_sub2));

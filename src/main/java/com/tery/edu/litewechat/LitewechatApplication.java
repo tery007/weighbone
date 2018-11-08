@@ -1,5 +1,6 @@
 package com.tery.edu.litewechat;
 
+import com.github.sd4324530.fastweixin.api.OauthAPI;
 import com.github.sd4324530.fastweixin.api.config.ApiConfig;
 import com.github.sd4324530.fastweixin.util.RedisTemplateUtil;
 import com.tery.edu.litewechat.constants.WechatConstants;
@@ -24,6 +25,10 @@ public class LitewechatApplication {
         return config;
     }
 
+    @Bean
+    public OauthAPI newOauthAPI(ApiConfig apiConfig) {
+        return new OauthAPI(apiConfig);
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(LitewechatApplication.class, args);

@@ -1,6 +1,10 @@
 spring:
   application:
     name: litewechat
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
 server:
   port: 8080
 logging:

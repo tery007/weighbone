@@ -15,6 +15,9 @@ public class WechatConstants {
      */
     public static final String MENU_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
 
+    /**
+     * 测试账号
+     */
     public static final String APP_ID = "wx104955e13af82c54";
     public static final String SECRET = "16ed45e3832cd9056c270be3974a7739";
     public static final String TOKEN  = "impxjgj34age";
