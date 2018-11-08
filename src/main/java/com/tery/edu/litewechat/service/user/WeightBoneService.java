@@ -101,17 +101,17 @@ public class WeightBoneService {
                 + (userReq.getBDay().length() > 1 ? userReq.getBDay() : "0" + userReq.getBDay());
     }
 
-    public static void main(String[] args) {
-        UserReq userReq=new UserReq(){{
-            setBYear("1993");
-            setBMonth("7");
-            setBDay("22");
-            setBHour("6");
-            setBMinute("30");
-        }};
-        WeightBoneService service = new WeightBoneService();
-        BoneInfo info = service.weightBone(userReq);
-        log.info("您的骨重是：" + info.getBoneWeight());
-    }
+//    public static void main(String[] args) {
+//        UserReq userReq=new UserReq(){{
+//            setBYear("1993");
+//            setBMonth("7");
+//            setBDay("22");
+//            setBHour("6");
+//            setBMinute("30");
+//        }};
+//        WeightBoneService service = new WeightBoneService();
+//        BoneInfo info = service.weightBone(userReq);
+//        log.info("您的骨重是：" + info.getBoneWeight());
+//    }
 
 }
