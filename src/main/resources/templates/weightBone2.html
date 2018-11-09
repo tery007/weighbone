@@ -22,17 +22,21 @@
                 <div class="sel-field">
                     <label class="sel-txt">公历生日：</label>
                         <div class="sel-a sel-year">
-                            <select th:field="*{bYear}">
+                            <select class="sel-data" th:field="*{bYear}">
                                 <option th:each="year : *{years}" th:value="${year}" th:text="${year}"></option>
                             </select>
                         </div>
                 </div>
-                <select th:field="*{bMonth}">
-                    <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
-                </select><br/>
-                <select th:field="*{bDay}">
-                    <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
-                </select>
+                <div class="sel-a">
+                    <select class="sel-data" th:field="*{bMonth}">
+                        <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
+                    </select>
+                </div>
+                <div class="sel-a">
+                    <select class="sel-data" th:field="*{bDay}">
+                        <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
+                    </select>
+                </div>
                 <div class="sel-field">
                     <span class="sel-txt">出生时间：</span>
                     <select th:field="*{bHour}">

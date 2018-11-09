@@ -67,6 +67,32 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     display: block;
 }
 
+.sel-a .sel-selected {
+    padding-right: 0.88889rem;
+}
+
+.sel-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.sel-a:nth-of-type(2) {
+    margin: 0 2%;
+}
+
+.sel-a {
+    width: 22%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-color: #e4b783;
+}
+
 .btn-box {
     display: -webkit-box;
     display: -moz-box;
