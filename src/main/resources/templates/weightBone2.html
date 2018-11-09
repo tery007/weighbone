@@ -26,17 +26,18 @@
                                 <option th:each="year : *{years}" th:value="${year}" th:text="${year}"></option>
                             </select>
                         </div>
+                        <div class="sel-a">
+                            <select class="sel-data" th:field="*{bMonth}">
+                                <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
+                            </select>
+                        </div>
+                        <div class="sel-a">
+                            <select class="sel-data" th:field="*{bDay}">
+                                <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
+                            </select>
+                        </div>
                 </div>
-                <div class="sel-a">
-                    <select class="sel-data" th:field="*{bMonth}">
-                        <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
-                    </select>
-                </div>
-                <div class="sel-a">
-                    <select class="sel-data" th:field="*{bDay}">
-                        <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
-                    </select>
-                </div>
+
                 <div class="sel-field">
                     <span class="sel-txt">出生时间：</span>
                     <select th:field="*{bHour}">
