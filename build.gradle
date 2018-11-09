@@ -33,6 +33,7 @@ dependencies {
     compile group: 'org.webjars.bower', name: 'jquery', version: '3.3.1'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    compile group: 'org.apache.httpcomponents', name: 'httpmime'
     compile("javax.validation:validation-api:2.0.1.Final")
     compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
@@ -41,7 +42,6 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
     compile group: 'org.thymeleaf', name: 'thymeleaf'
-//    compile group: 'org.freemarker', name: 'freemarker'
     compile fileTree(dir:'src/main/java/com/tery/edu/litewechat/lib',includes:['*.jar'])
     compileOnly "org.springframework.boot:spring-boot-configuration-processor"
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.22'
