@@ -1,13 +1,34 @@
-input {
-    background: transparent;
-    border: none;
-    bottom: 0;
-    box-sizing: border-box;
-    left: 0;
-    margin: 0;
-    outline: none;
-    padding: 0 8px;
-    position: absolute;
-    top: 2px;
-    width: 100%;
+body{
+    font-family:”Lucida Grande”, “Lucida Sans Unicode”, Verdana, Arial, Helvetica, sans-serif;
+    font-size:14px;
+}
+
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+.myform{
+    margin:0 auto;
+    width:600px;
+    padding:14px;
+}
+
+#stylized input{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 10px;
+}
+
+#buttons-h{
+    clear:both;
+    margin-left:150px;
+    width:125px;
+    height:31px;
+    background:#666666;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
 }
