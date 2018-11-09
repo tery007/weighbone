@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>称骨</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 </head>
 
 <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
@@ -40,12 +40,16 @@
 
                 <div class="sel-field">
                     <span class="sel-txt">出生时间：</span>
-                    <select th:field="*{bHour}">
-                        <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
-                    </select>
-                    <select th:field="*{bMinute}">
-                        <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
-                    </select>
+                    <div class="sel-a sel-year">
+                        <select th:field="*{bHour}">
+                            <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
+                        </select>
+                    </div>
+                    <div class="sel-a sel-year">
+                        <select th:field="*{bMinute}">
+                            <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-col form-sex">
                 <label class="sex">性别：</label><br/>
