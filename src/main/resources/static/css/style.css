@@ -1,34 +1,108 @@
 body{
     font-family:”Lucida Grande”, “Lucida Sans Unicode”, Verdana, Arial, Helvetica, sans-serif;
-    font-size:14px;
+    font-size:40px;
 }
 
-p, h1, form, button{border:0; margin:0; padding:0;}
-.spacer{clear:both; height:1px;}
-.myform{
-    margin:0 auto;
-    width:600px;
-    padding:14px;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+.form-col {
+    margin-bottom: 0.81481rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
-#stylized input{
-    float:left;
-    font-size:12px;
-    padding:4px 2px;
-    border:solid 1px #aacfe4;
-    width:200px;
-    margin:2px 0 20px 10px;
+.form-col label {
+    display: block;
+    font-size: 1.11111rem;
+    color: #7c4328;
+    height: 2.96296rem;
+    line-height: 2.96296rem;
 }
 
-#buttons-h{
-    clear:both;
-    margin-left:150px;
-    width:125px;
-    height:31px;
-    background:#666666;
-    text-align:center;
-    line-height:31px;
-    color:#FFFFFF;
-    font-size:11px;
-    font-weight:bold;
+.form-col .ipt {
+    border-color: #e4b783;
+    background-color: #fff;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+    display: block;
+}
+.form-sex {
+    margin: -0.37037rem 0 0.37037rem;
+}
+
+.sel-field {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 0.81481rem;
+}
+
+.sel-txt {
+    display: block;
+    height: 2.96296rem;
+    line-height: 2.96296rem;
+    font-size: 1.11111rem;
+    color: #7c4328;
+}
+
+.sel-year {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+    display: block;
+}
+
+.btn-box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.btn-box .btn-grown {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+    display: block;
+}
+.btn-box .btn-grown {
+    width: 16.66667rem;
+}
+.btn-grown:visited {
+    color: #fff;
+}
+.btn-grown {
+    position: relative;
+    display: inline-block;
+    font-size: 1.33333rem;
+    color: #fff;
+    background-color: #a46429;
+    height: 2.96296rem;
+    line-height: 2.96296rem;
+    -moz-border-radius: 0.22222rem;
+    -webkit-border-radius: 0.22222rem;
+    border-radius: 0.22222rem;
+    border: 1px solid #c58545;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }

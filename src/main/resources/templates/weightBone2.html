@@ -15,31 +15,44 @@
     <body>
         <div id=”stylized” class=”myform”>
             <form action="#" th:action="@{/wb/weightBone}" th:object="${userReq}" method="post">
-                <label>姓名：</label><br/>
-                <input type="text" id="datePlanted" name="userName" th:value="*{userName}" style="align-items: center;width: 120px;" /><br/>
-                <label>公历生日：</label><br/>
-                <select th:field="*{bYear}">
-                    <option th:each="year : *{years}" th:value="${year}" th:text="${year}"></option>
-                </select>
+                <div class="form-col">
+                    <label >姓名：</label><br/>
+                    <input class="ipt" type="text" id="datePlanted" name="userName" th:value="*{userName}" style="align-items: center;width: 120px;" /><br/>
+                </div>
+                <div class="sel-field">
+                    <label class="sel-txt">公历生日：</label>
+                        <div class="sel-a sel-year">
+                            <select th:field="*{bYear}">
+                                <option th:each="year : *{years}" th:value="${year}" th:text="${year}"></option>
+                            </select>
+                        </div>
+                </div>
                 <select th:field="*{bMonth}">
                     <option th:each="month : *{months}" th:value="${month}" th:text="${month}"></option>
                 </select><br/>
                 <select th:field="*{bDay}">
                     <option th:each="day : *{days}" th:value="${day}" th:text="${day}"></option>
-                </select><br/>
-                <select th:field="*{bHour}">
-                    <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
-                </select><br/>
-                <select th:field="*{bMinute}">
-                    <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
-                </select><br/>
-                <label>性别：</label><br/>
+                </select>
+                <div class="sel-field">
+                    <span class="sel-txt">出生时间：</span>
+                    <select th:field="*{bHour}">
+                        <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
+                    </select>
+                    <select th:field="*{bMinute}">
+                        <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
+                    </select>
+                </div>
+                <div class="form-col form-sex">
+                <label class="sex">性别：</label><br/>
                 <select th:field="*{gender}">
                     <option th:value=0 th:text="请选择">---请选择---</option>
                     <option th:value=1 th:text="男">男</option>
                     <option th:value=2 th:text="女">女</option>
                 </select><br/>
-                <input id="buttons-h" type="submit" >
+                </div>
+                <div class="btn-box">
+                    <input id="buttons-h" type="submit" class="btn-grown" >
+                </div>
             </form>
         </div>
     </body>
