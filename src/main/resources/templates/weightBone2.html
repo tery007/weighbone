@@ -32,8 +32,6 @@
             <select th:field="*{bMinute}">
                 <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
             </select><br/>
-
-
             <label>性别：</label><br/>
             <select th:field="*{gender}">
                 <option th:value=0 th:text="请选择">---请选择---</option>
