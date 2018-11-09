@@ -72,9 +72,14 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 .sel-data {
-    width: 25%;
+    width: 100%;
     height: 30px;
 }
+.sex-data {
+    width: 5%;
+    height: 30px;
+}
+
 .sel-a:nth-of-type(2) {
     margin: 0 2%;
 }

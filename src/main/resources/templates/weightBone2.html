@@ -41,19 +41,19 @@
                 <div class="sel-field">
                     <span class="sel-txt">出生时间：</span>
                     <div class="sel-a sel-year">
-                        <select th:field="*{bHour}">
+                        <select class="sel-data" th:field="*{bHour}">
                             <option th:each="hour : *{hours}" th:value="${hour}" th:text="${hour}"></option>
                         </select>
                     </div>
                     <div class="sel-a sel-year">
-                        <select th:field="*{bMinute}">
+                        <select class="sel-data" th:field="*{bMinute}">
                             <option th:each="minute : *{minutes}" th:value="${minute}" th:text="${minute}"></option>
                         </select>
                     </div>
                 </div>
                 <div class="form-col form-sex">
                 <label class="sex">性别：</label><br/>
-                <select th:field="*{gender}">
+                <select class="sex-data" th:field="*{gender}">
                     <option th:value=0 th:text="请选择">---请选择---</option>
                     <option th:value=1 th:text="男">男</option>
                     <option th:value=2 th:text="女">女</option>
