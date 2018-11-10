@@ -12,8 +12,8 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 input, button, textarea, select {
     font-size: 100%;
-    border: none;
-    background: none;
+    border: groove;
+    background: center;
     -webkit-appearance: none;
 }
 body{
@@ -21,6 +21,8 @@ body{
 }
 form{
     margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .form-col {
     margin-bottom: 0.81481rem;
@@ -95,9 +97,9 @@ form{
     font-size: 27px;
 }
 .sex-data {
-    margin-left: 3%;
-    width: 5%;
-    height: 30px;
+    margin-left: 4%;
+    width: 10%;
+    height: 100%;
     font-size: 27px;
 }
 
