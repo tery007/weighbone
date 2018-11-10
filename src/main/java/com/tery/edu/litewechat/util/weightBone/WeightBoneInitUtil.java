@@ -80,6 +80,25 @@ public class WeightBoneInitUtil {
         return minutes;
     }
 
+    public static String boneWeight(Double weight) {
+        if (weight <= 0.0) {
+            return null;
+        }
+        String value = String.valueOf(weight);
+        String interalVal = value.substring(0, value.indexOf('.'));
+        String decimalVal = value.substring(value.indexOf('.') + 1);
+        if (Integer.valueOf(interalVal) > 0) {
+            interalVal = interalVal + "两";
+        }
+        if (Integer.valueOf(decimalVal) > 0) {
+            decimalVal += "钱";
+        } else {
+            decimalVal = "";
+        }
+        return interalVal + decimalVal;
+    }
+
+
 
 
 //    public static final Map<String, Double> yearWeightMap = new HashMap<>();

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by wanglei on 2018/10/18 上午9:52
@@ -34,13 +35,13 @@ public class WeightBoneController {
     }
 
     @RequestMapping(value = "/weightBone")
-    public String weightBone(UserReq userReq) {
+    public ModelAndView weightBone(UserReq userReq) {
         try {
             BoneInfo boneInfo=weightBoneService.weightBone(userReq);
-            return "weightBone";
+            return new ModelAndView("weightBone", "boneInfo", boneInfo);
         } catch (Exception e) {
             log.error("weightBone fail:" + e);
-            return "weightBone";
+            return null;
         }
     }
 }

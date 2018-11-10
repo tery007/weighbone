@@ -8,13 +8,11 @@ import com.tery.edu.litewechat.enums.bone.MonthWeightEnum;
 import com.tery.edu.litewechat.enums.bone.YearWeightEnum;
 import com.tery.edu.litewechat.util.calendar.CalendarUtil;
 import com.tery.edu.litewechat.util.calendar.ShiChenUtil;
+import com.tery.edu.litewechat.util.calendar.ZodiacUtil;
 import com.tery.edu.litewechat.util.weightBone.WeightBoneInitUtil;
-import com.tery.edu.litewechat.util.weightBone.WeightBoneUtil;
+import com.tery.edu.litewechat.util.weightBone.BoneInfoUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by wanglei on 2018/10/18 上午9:51
@@ -26,10 +24,11 @@ public class WeightBoneService {
 
     /**
      * 初始化称骨页面用户数据
+     *
      * @return
      */
     public UserReq initUserReq() {
-        UserReq userReq = new UserReq(){{
+        UserReq userReq = new UserReq() {{
             setGender(1);
             setUserName("");
             setYears(WeightBoneInitUtil.initYears());
@@ -49,13 +48,13 @@ public class WeightBoneService {
 
     /**
      * 算法
+     *
      * @param userReq
      * @return
      */
     public BoneInfo weightBone(UserReq userReq) {
         BoneInfo boneInfo = new BoneInfo();
         try {
-            String info = WeightBoneUtil.generateInfo(userReq);
             //出生年
             String year = userReq.getBYear();
             //公历生日yyyyMMdd
@@ -84,10 +83,29 @@ public class WeightBoneService {
             //出生时骨重
             Double hourWeight = HourWeightEnum.hourWeightEnumMap.get(shichen).getValue();
 
-
-            boneInfo.setBoneWeight(yearWeight + monthWeight + dayWeight + hourWeight);
-
-//            boneInfo.setBoneInfo();
+            Double boneWeight = yearWeight + monthWeight + dayWeight + hourWeight;
+            //骨重量
+            boneInfo.setBoneWeightValue(boneWeight);
+            //骨重（市斤）
+            String boneWeightStr = WeightBoneInitUtil.boneWeight(boneWeight);
+            boneInfo.setBoneWeight(boneWeightStr);
+            //骨重代表信息
+            boneInfo.setBoneWeightInfo(BoneInfoUtil.boneWeightInfoMap.get(boneWeightStr));
+            //姓名
+            boneInfo.setName(userReq.getUserName());
+            //性别
+            boneInfo.setSex(userReq.getGender() == 1 ? "男" : "女");
+            //属相
+            boneInfo.setShuXiang(ZodiacUtil.getZodiac(Integer.valueOf(year)));
+            //公历生日
+            boneInfo.setGlBirthday(solarBirthDay);
+            //年份天干地支
+            boneInfo.setYearTD(td);
+            boneInfo.setMonthBZ(String.valueOf(month));
+            boneInfo.setDayBZ(String.valueOf(day));
+            boneInfo.setHourBZ(shichen);
+            log.info("==>weightBone infos:" + boneInfo.toString());
+            return boneInfo;
 
         } catch (Exception e) {
             log.error("==>weightBone error:" + e);
@@ -111,7 +129,7 @@ public class WeightBoneService {
 //        }};
 //        WeightBoneService service = new WeightBoneService();
 //        BoneInfo info = service.weightBone(userReq);
-//        log.info("您的骨重是：" + info.getBoneWeight());
+//        log.info("您的骨重是：" + JSONObject.toJSONString(info));
 //    }
 
 }
