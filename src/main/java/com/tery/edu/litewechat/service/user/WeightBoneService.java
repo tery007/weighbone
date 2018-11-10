@@ -1,5 +1,6 @@
 package com.tery.edu.litewechat.service.user;
 
+import com.alibaba.fastjson.JSONObject;
 import com.tery.edu.litewechat.domain.weightBone.BoneInfo;
 import com.tery.edu.litewechat.domain.weightBone.UserReq;
 import com.tery.edu.litewechat.enums.bone.DayWeightEnum;
@@ -13,6 +14,8 @@ import com.tery.edu.litewechat.util.weightBone.WeightBoneInitUtil;
 import com.tery.edu.litewechat.util.weightBone.BoneInfoUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 /**
  * Created by wanglei on 2018/10/18 上午9:51
@@ -84,10 +87,12 @@ public class WeightBoneService {
             Double hourWeight = HourWeightEnum.hourWeightEnumMap.get(shichen).getValue();
 
             Double boneWeight = yearWeight + monthWeight + dayWeight + hourWeight;
+            BigDecimal bg = new BigDecimal(boneWeight);
+            double doubleValue = bg.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
             //骨重量
-            boneInfo.setBoneWeightValue(boneWeight);
+            boneInfo.setBoneWeightValue(doubleValue);
             //骨重（市斤）
-            String boneWeightStr = WeightBoneInitUtil.boneWeight(boneWeight);
+            String boneWeightStr = WeightBoneInitUtil.boneWeight(doubleValue);
             boneInfo.setBoneWeight(boneWeightStr);
             //骨重代表信息
             boneInfo.setBoneWeightInfo(BoneInfoUtil.boneWeightInfoMap.get(boneWeightStr));
@@ -119,17 +124,17 @@ public class WeightBoneService {
                 + (userReq.getBDay().length() > 1 ? userReq.getBDay() : "0" + userReq.getBDay());
     }
 
-//    public static void main(String[] args) {
-//        UserReq userReq=new UserReq(){{
-//            setBYear("1993");
-//            setBMonth("7");
-//            setBDay("22");
-//            setBHour("6");
-//            setBMinute("30");
-//        }};
-//        WeightBoneService service = new WeightBoneService();
-//        BoneInfo info = service.weightBone(userReq);
-//        log.info("您的骨重是：" + JSONObject.toJSONString(info));
-//    }
+    public static void main(String[] args) {
+        UserReq userReq=new UserReq(){{
+            setBYear("1988");
+            setBMonth("10");
+            setBDay("15");
+            setBHour("0");
+            setBMinute("30");
+        }};
+        WeightBoneService service = new WeightBoneService();
+        BoneInfo info = service.weightBone(userReq);
+        log.info("您的骨重是：" + JSONObject.toJSONString(info));
+    }
 
 }

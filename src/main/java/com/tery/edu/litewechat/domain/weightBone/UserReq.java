@@ -33,6 +33,16 @@ public class UserReq {
         return "UserReq{" +
                 "gender=" + gender +
                 ", userName='" + userName + '\'' +
+                ", years=" + years +
+                ", months=" + months +
+                ", days=" + days +
+                ", hours=" + hours +
+                ", minutes=" + minutes +
+                ", bYear='" + bYear + '\'' +
+                ", bMonth='" + bMonth + '\'' +
+                ", bDay='" + bDay + '\'' +
+                ", bHour='" + bHour + '\'' +
+                ", bMinute='" + bMinute + '\'' +
                 ", birthdayDate='" + birthdayDate + '\'' +
                 ", birthdayTime='" + birthdayTime + '\'' +
                 '}';
