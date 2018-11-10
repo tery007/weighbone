@@ -7,7 +7,10 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     margin: 0;
     padding: 0;
 }
-.form{
+body{
+    background: url(https://img.alicdn.com/imgextra/i4/116513855/TB2Pf35gFXXXXXmXpXXXXXXXXXX_!!116513855.jpg) repeat;
+}
+form{
     margin-top: 15%;
     margin-left: 10%;
     margin-right: 10%;
@@ -30,7 +33,9 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 .form-col .ipt {
-    border-color: #e4b783;
+    margin-left: 3%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
     background-color: #fff;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -45,6 +50,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 .sel-field {
+    font-size: x-large;
     width: 100%;
     display: -webkit-box;
     display: -moz-box;
@@ -59,7 +65,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     height: 2.96296rem;
     line-height: 2.96296rem;
     font-size: 1.11111rem;
-    color: #7c4328;
+    color: #453e3b;
 }
 
 .sel-year {
@@ -125,13 +131,13 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     display: inline-block;
     font-size: 1.33333rem;
     color: #fff;
-    background-color: #a46429;
+    background-color: #484242;
     height: 2.96296rem;
     line-height: 2.96296rem;
     -moz-border-radius: 0.22222rem;
     -webkit-border-radius: 0.22222rem;
     border-radius: 0.22222rem;
-    border: 1px solid #c58545;
+    border: 1px solid #887d78;
     text-align: center;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
