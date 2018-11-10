@@ -1,3 +1,6 @@
+html {
+    font-size: 27px;
+}
 body{
     font-family:”Lucida Grande”, “Lucida Sans Unicode”, Verdana, Arial, Helvetica, sans-serif;
     font-size:40px;
@@ -7,13 +10,17 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     margin: 0;
     padding: 0;
 }
+input, button, textarea, select {
+    font-size: 100%;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+}
 body{
     background: url(https://img.alicdn.com/imgextra/i4/116513855/TB2Pf35gFXXXXXmXpXXXXXXXXXX_!!116513855.jpg) repeat;
 }
 form{
     margin-top: 15%;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 .form-col {
     margin-bottom: 0.81481rem;
@@ -27,7 +34,7 @@ form{
 .form-col label {
     display: block;
     font-size: 1.11111rem;
-    color: #7c4328;
+    color: #453e3b;
     height: 2.96296rem;
     line-height: 2.96296rem;
 }
@@ -84,12 +91,14 @@ form{
 
 .sel-data {
     width: 100%;
-    height: 30px;
+    height: 70%;
+    font-size: 27px;
 }
 .sex-data {
     margin-left: 3%;
     width: 5%;
     height: 30px;
+    font-size: 27px;
 }
 
 .sel-a:nth-of-type(2) {
