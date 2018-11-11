@@ -19,7 +19,8 @@
         <div class="infor" th:text="*{boneInfoBZ}"></div>
         <div class="form-div">
             <p class="color-g">亲爱的 <span class="name" th:text="*{name}"></span>，根据您的生辰八字，经过测算</p>
-            <p class="cRed" >您的骨重为:<span class="name" th:text="*{boneWeight}"></span></p>
+            <p class="cRed" >您的骨重为:<span th:text="*{boneWeight}"></span></p>
+            <p class="cRed" ><span th:text="*{boneInfoSep}"></span></p>
         </div>
         <div class="mod-list">
             <h4 class="title">命书分析</h4>

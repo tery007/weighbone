@@ -111,13 +111,30 @@ public class WeightBoneService {
             boneInfo.setDayBZ(day <= 9 ? "初" + String.valueOf(day) : String.valueOf(day));
             boneInfo.setHourBZ(shichen);
 
+            boneInfo.setYlYear(year);
+            boneInfo.setYlMonth(String.valueOf(month));
+            boneInfo.setYlDay(String.valueOf(day));
+            boneInfo.setYlHour(boneInfo.getHourBZ());
+
             boneInfo.setBoneInfo(userReq.getUserName()
                     + " " + boneInfo.getSex()
-                    + " " + boneInfo.getGlYear()
-                    + "年" + boneInfo.getGlMonth()
-                    + "月" + boneInfo.getGlDay()
-                    + "日" + boneInfo.getGlHour() + "时" + boneInfo.getGlMinute() + "分" + boneInfo.getAge() + "岁, 属" + boneInfo.getShuXiang());
-            boneInfo.setBoneInfoBZ(boneInfo.getYearTD() + " " + boneInfo.getMonthBZ() + "月 " + boneInfo.getDayBZ() + " " + boneInfo.getHourBZ());
+                    + " " + userReq.getBYear()
+                    + "年" + userReq.getBMonth()
+                    + "月" + userReq.getBDay()
+                    + "日" + userReq.getBHour()
+                    + "时" + userReq.getBMinute()
+                    + "分" + boneInfo.getAge()
+                    + "岁, 属" + boneInfo.getShuXiang());
+            boneInfo.setBoneInfoBZ(boneInfo.getYlYear()
+                    + " " + boneInfo.getYlMonth()
+                    + "月 " + boneInfo.getYlDay()
+                    + "日 " + boneInfo.getYlHour());
+
+            boneInfo.setBoneInfoSep("您的骨重构成---年："
+                    + yearWeight + "，月："
+                    + monthWeight + "，日："
+                    + dayWeight + "，时辰："
+                    + hourWeight);
             log.info("==>weightBone infos:" + boneInfo.toString());
             return boneInfo;
 

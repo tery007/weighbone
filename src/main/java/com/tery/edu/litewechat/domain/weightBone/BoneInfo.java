@@ -26,6 +26,7 @@ public class BoneInfo {
 
     private String boneInfo;
     private String boneInfoBZ;
+    private String boneInfoSep;
 
     /**
      * 生辰八字
