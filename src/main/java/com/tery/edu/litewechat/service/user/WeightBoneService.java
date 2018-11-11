@@ -99,7 +99,7 @@ public class WeightBoneService {
             //姓名
             boneInfo.setName(userReq.getUserName());
             //性别
-//            boneInfo.setSex(userReq.getGender() == 1 ? "男" : "女");
+            boneInfo.setSex(userReq.getGender() == 1 ? "男" : "女");
             boneInfo.setAge(String.valueOf(CalendarUtil.age(solarBirthDay)));
             //属相
             boneInfo.setShuXiang(ZodiacUtil.getZodiac(Integer.valueOf(year)));
@@ -110,6 +110,14 @@ public class WeightBoneService {
             boneInfo.setMonthBZ(String.valueOf(month));
             boneInfo.setDayBZ(day <= 9 ? "初" + String.valueOf(day) : String.valueOf(day));
             boneInfo.setHourBZ(shichen);
+
+            boneInfo.setBoneInfo(userReq.getUserName()
+                    + " " + boneInfo.getSex()
+                    + " " + boneInfo.getGlYear()
+                    + "年" + boneInfo.getGlMonth()
+                    + "月" + boneInfo.getGlDay()
+                    + "日" + boneInfo.getGlHour() + "时" + boneInfo.getGlMinute() + "分" + boneInfo.getAge() + "岁, 属" + boneInfo.getShuXiang());
+            boneInfo.setBoneInfoBZ(boneInfo.getYearTD() + " " + boneInfo.getMonthBZ() + "月 " + boneInfo.getDayBZ() + " " + boneInfo.getHourBZ());
             log.info("==>weightBone infos:" + boneInfo.toString());
             return boneInfo;
 

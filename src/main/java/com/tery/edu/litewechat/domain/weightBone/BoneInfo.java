@@ -24,6 +24,9 @@ public class BoneInfo {
      */
     private String boneWeightInfo;
 
+    private String boneInfo;
+    private String boneInfoBZ;
+
     /**
      * 生辰八字
      */
@@ -69,6 +72,8 @@ public class BoneInfo {
                 "boneWeightValue=" + boneWeightValue +
                 ", boneWeight='" + boneWeight + '\'' +
                 ", boneWeightInfo='" + boneWeightInfo + '\'' +
+                ", boneInfo='" + boneInfo + '\'' +
+                ", boneInfoBZ='" + boneInfoBZ + '\'' +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age='" + age + '\'' +

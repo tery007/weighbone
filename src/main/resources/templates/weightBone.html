@@ -15,8 +15,8 @@
 
     <div class="main-body">
         <h3 class="hd">当前算命者信息</h3>
-        <div class="infor" th:text="*{name}&nbsp;*{sex}&nbsp;*{glYear}年*{glMonth}月*{glDay}日*{glHour}时*{glMinute}分&nbsp;*{age}&nbsp;属*{shuXiang}"></div>
-        <div class="infor" th:text="*{yearTD}*{monthBZ}月*{dayBZ}*{hourBZ}"></div>
+        <div class="infor" th:text="*{boneInfo}"></div>
+        <div class="infor" th:text="*{boneInfoBZ}"></div>
         <div class="form-div">
             <p class="color-g">亲爱的 <span class="name" th:text="*{name}"></span>，根据您的生辰八字，经过测算</p>
             <p class="cRed" th:text="您的骨重为：*{boneWeight}"></p>
