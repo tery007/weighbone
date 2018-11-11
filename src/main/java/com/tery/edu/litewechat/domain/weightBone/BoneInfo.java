@@ -67,6 +67,7 @@ public class BoneInfo {
     //时辰
     private String hourBZ;
 
+
     @Override
     public String toString() {
         return "BoneInfo{" +
@@ -75,6 +76,7 @@ public class BoneInfo {
                 ", boneWeightInfo='" + boneWeightInfo + '\'' +
                 ", boneInfo='" + boneInfo + '\'' +
                 ", boneInfoBZ='" + boneInfoBZ + '\'' +
+                ", boneInfoSep='" + boneInfoSep + '\'' +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age='" + age + '\'' +
