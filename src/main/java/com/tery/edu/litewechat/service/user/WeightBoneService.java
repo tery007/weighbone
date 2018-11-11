@@ -126,11 +126,11 @@ public class WeightBoneService {
                     + "分" + boneInfo.getAge()
                     + "岁, 属" + boneInfo.getShuXiang());
             boneInfo.setBoneInfoBZ(boneInfo.getYlYear()
-                    + " " + boneInfo.getYlMonth()
+                    + "年" + boneInfo.getYlMonth()
                     + "月 " + boneInfo.getYlDay()
                     + "日 " + boneInfo.getYlHour());
 
-            boneInfo.setBoneInfoSep("您的骨重构成(年："
+            boneInfo.setBoneInfoSep("(年："
                     + yearWeight + "，月："
                     + monthWeight + "，日："
                     + dayWeight + "，时辰："
