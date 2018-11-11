@@ -2,6 +2,7 @@ package com.tery.edu.litewechat.util.calendar;
 
 import com.tery.edu.litewechat.enums.bone.DiZhiEnum;
 import com.tery.edu.litewechat.enums.bone.TianGanEnum;
+import com.tery.edu.litewechat.exception.GolumException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.ParseException;
@@ -329,7 +330,6 @@ public class CalendarUtil {
     }
 
 
-
     public static String lunarYear2TD(int year) {
         if (year < 1900 || year > 2099) {
             throw new RuntimeException("year not in[1900,2099]");
@@ -344,6 +344,7 @@ public class CalendarUtil {
 
     /**
      * 年份天干
+     *
      * @param niangan
      * @return
      */
@@ -353,6 +354,7 @@ public class CalendarUtil {
 
     /**
      * 年份地支
+     *
      * @param nianzhi
      * @return
      */
@@ -383,13 +385,14 @@ public class CalendarUtil {
         return niangan;
     }
 
-    public static void main(String[] args) throws Exception {
-        String lunar = solarToLunar("19881015");
-        System.out.println(lunar);
-        System.out.println(lunarYear2TD(1988));
-        System.out.println(getDayBirthday("19880926"));
-
-    }
+//    public static void main(String[] args) throws Exception {
+//        String lunar = solarToLunar("20101101");
+//        System.out.println(lunar);
+//        System.out.println(lunarYear2TD(1988));
+//        System.out.println(getDayBirthday("19880926"));
+//        System.out.println(age(lunar));
+//
+//    }
 
     /**
      * 截取出生月
@@ -406,6 +409,7 @@ public class CalendarUtil {
 
     /**
      * 截取出生日
+     *
      * @param lunarBirthDay
      * @return
      */
@@ -415,4 +419,37 @@ public class CalendarUtil {
         }
         return Integer.valueOf(lunarBirthDay.substring(6));
     }
+
+    /**
+     * 计算年龄-周岁
+     * @param birthday
+     * @return
+     * @throws Exception
+     */
+    public static Integer age(String birthday) throws Exception {
+        Date birthDay = new SimpleDateFormat("yyyyMMdd").parse(birthday);
+        Calendar cal = Calendar.getInstance();
+        if (cal.before(birthDay)) { //出生日期晚于当前时间，无法计算
+            throw new GolumException("The birthDay is before Now.It's unbelievable!");
+        }
+        int yearNow = cal.get(Calendar.YEAR);  //当前年份
+        int monthNow = cal.get(Calendar.MONTH);  //当前月份
+        int dayOfMonthNow = cal.get(Calendar.DAY_OF_MONTH); //当前日期
+        cal.setTime(birthDay);
+        int yearBirth = cal.get(Calendar.YEAR);
+        int monthBirth = cal.get(Calendar.MONTH);
+        int dayOfMonthBirth = cal.get(Calendar.DAY_OF_MONTH);
+        int age = yearNow - yearBirth;   //计算整岁数
+        if (monthNow <= monthBirth) {
+            if (monthNow == monthBirth) {
+                if (dayOfMonthNow < dayOfMonthBirth) age--;//当前日期在生日之前，年龄减一
+            } else {
+                age--;//当前月份在生日之前，年龄减一
+            }
+        }
+        return age;
+
+    }
+
+
 }

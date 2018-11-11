@@ -29,6 +29,7 @@ public class BoneInfo {
      */
     private String name;
     private String sex;
+    private String age;
     //属相
     private String shuXiang;
 
@@ -70,6 +71,7 @@ public class BoneInfo {
                 ", boneWeightInfo='" + boneWeightInfo + '\'' +
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
+                ", age='" + age + '\'' +
                 ", shuXiang='" + shuXiang + '\'' +
                 ", glBirthday='" + glBirthday + '\'' +
                 ", glYear='" + glYear + '\'' +

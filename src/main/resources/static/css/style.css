@@ -24,6 +24,7 @@ form{
     margin-left: 5%;
     margin-right: 5%;
 }
+
 .form-col {
     margin-bottom: 0.81481rem;
     display: -webkit-box;
@@ -153,4 +154,66 @@ form{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+/**
+   weightBone.html
+ */
+.main-body {
+    padding: 0.74074rem 0 0;
+    font-size: 1.11111rem;
+    color: #7c4328;
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.main-body .hd {
+    color: #ca9868;
+    text-align: center;
+    line-height: 2.22222rem;
+}
+.main-body .hd {
+    color: #ca9868;
+    text-align: center;
+    line-height: 2.22222rem;
+}
+.form-div {
+    margin: 0.74074rem 1.11111rem;
+    border: 1px solid #afa79e;
+    text-align: center;
+    font-size: 1.11111rem;
+    padding: 0.59259rem 0;
+}
+.form-div .color-g {
+    color: #ca9868;
+    font-size: 1.11111rem;
+}
+.form-div p.cRed {
+    color: #f43d3d;
+    font-size: 1.18519rem;
+    line-height: 2.07407rem;
+}
+.main-body .mod-list {
+    margin-bottom: 0.37037rem;
+    padding: 0 1.11111rem;
+}
+.main-body .mod-list .title {
+    position: relative;
+    font-size: 1.33333rem;
+    line-height: 2.74074rem;
+    padding-left: 0.88889rem;
+}
+.main-body .mod-list p {
+    line-height: 1.77778rem;
+    text-align: justify;
+}
+
+.main-footer {
+    padding: 0 1.11111rem 0.55556rem;
+}
+.main-footer .remind {
+    padding: 0.96296rem 0;
+    font-size: 1.03704rem;
+    color: #a86e36;
+    line-height: 1.62963rem;
 }

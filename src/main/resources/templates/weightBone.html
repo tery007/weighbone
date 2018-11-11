@@ -11,46 +11,23 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <body>
-<div id=”views” class=”myform” th:object="${boneInfo}">
+<div id=”views” class=”infoZone” th:object="${boneInfo}">
 
-    <div class="basic">
-        <div>
-            <label>姓名：</label>
-            <input type="text" th:field="*{name}">
+    <div class="main-body">
+        <h3 class="hd">当前算命者信息</h3>
+        <div class="infor" th:text="*{name}&nbsp;*{sex}&nbsp;*{glYear}年*{glMonth}月*{glDay}日*{glHour}时*{glMinute}分&nbsp;*{age}&nbsp;属*{shuXiang}"></div>
+        <div class="infor" th:text="*{yearTD}*{monthBZ}月*{dayBZ}*{hourBZ}"></div>
+        <div class="form-div">
+            <p class="color-g">亲爱的 <span class="name" th:text="*{name}"></span>，根据您的生辰八字，经过测算</p>
+            <p class="cRed" th:text="您的骨重为：*{boneWeight}"></p>
         </div>
-        <div>
-            <label>性别：</label>
-            <input type="text" th:field="*{sex}">
+        <div class="mod-list">
+            <h4 class="title">命书分析</h4>
+            <p th:text="*{boneWeightInfo}"></p>
         </div>
-        <div>
-            <label>出生日期：</label>
-            <input type="text" th:field="*{glBirthday}">
+        <div class="main-footer">
+            <p class="remind">注：本算命系统来源于中国民俗学的一些测算方法，并非科学研究成果，仅供休闲娱乐，请勿迷信，按此操作一切后果自负！</p>
         </div>
-        <div>
-            <label>属相：</label>
-            <input type="text" th:field="*{shuXiang}">
-        </div>
-        <div>
-            <label>天干地支：</label>
-            <input type="text" th:field="*{yearTD}">
-        </div>
-        <div>
-            <label>出生月：</label>
-            <input type="text" th:field="*{monthBZ}">
-        </div>
-        <div>
-            <label>出生日：</label>
-            <input type="text" th:field="*{dayBZ}">
-        </div>
-        <div>
-            <label>时辰：</label>
-            <input type="text" th:field="*{hourBZ}">
-        </div>
-        <div>
-            <label>骨重信息：</label>
-            <input type="text" th:field="*{boneWeightInfo}">
-        </div>
-
     </div>
 </div>
 </body>

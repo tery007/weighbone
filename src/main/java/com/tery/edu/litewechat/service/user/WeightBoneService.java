@@ -99,7 +99,8 @@ public class WeightBoneService {
             //姓名
             boneInfo.setName(userReq.getUserName());
             //性别
-            boneInfo.setSex(userReq.getGender() == 1 ? "男" : "女");
+//            boneInfo.setSex(userReq.getGender() == 1 ? "男" : "女");
+            boneInfo.setAge(String.valueOf(CalendarUtil.age(solarBirthDay)));
             //属相
             boneInfo.setShuXiang(ZodiacUtil.getZodiac(Integer.valueOf(year)));
             //公历生日
@@ -107,7 +108,7 @@ public class WeightBoneService {
             //年份天干地支
             boneInfo.setYearTD(td);
             boneInfo.setMonthBZ(String.valueOf(month));
-            boneInfo.setDayBZ(String.valueOf(day));
+            boneInfo.setDayBZ(day <= 9 ? "初" + String.valueOf(day) : String.valueOf(day));
             boneInfo.setHourBZ(shichen);
             log.info("==>weightBone infos:" + boneInfo.toString());
             return boneInfo;
@@ -124,17 +125,17 @@ public class WeightBoneService {
                 + (userReq.getBDay().length() > 1 ? userReq.getBDay() : "0" + userReq.getBDay());
     }
 
-    public static void main(String[] args) {
-        UserReq userReq=new UserReq(){{
-            setBYear("1988");
-            setBMonth("10");
-            setBDay("15");
-            setBHour("0");
-            setBMinute("30");
-        }};
-        WeightBoneService service = new WeightBoneService();
-        BoneInfo info = service.weightBone(userReq);
-        log.info("您的骨重是：" + JSONObject.toJSONString(info));
-    }
+//    public static void main(String[] args) {
+//        UserReq userReq=new UserReq(){{
+//            setBYear("1988");
+//            setBMonth("10");
+//            setBDay("15");
+//            setBHour("0");
+//            setBMinute("30");
+//        }};
+//        WeightBoneService service = new WeightBoneService();
+//        BoneInfo info = service.weightBone(userReq);
+//        log.info("您的骨重是：" + info.toString());
+//    }
 
 }
