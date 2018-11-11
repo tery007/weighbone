@@ -172,11 +172,12 @@ form{
     text-align: center;
     line-height: 2.22222rem;
 }
-.main-body .hd {
-    color: #ca9868;
+.main-body .infor {
     text-align: center;
+    font-size: 1.03704rem;
     line-height: 2.22222rem;
 }
+
 .form-div {
     margin: 0.74074rem 1.11111rem;
     border: 1px solid #afa79e;
