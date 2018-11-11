@@ -48,7 +48,7 @@ public enum YearWeightEnum {
     BINGWU("丙午", 1.3),
     WUWU("戊午", 1.9),
     XINWEI("辛未", 0.8),
-    GUIWEI("癸未", 0.8),
+    GUIWEI("癸未", 0.7),
     YIWEI("乙未", 0.6),
     DINGWEI("丁未", 0.5),
     JIWEI("己未", 0.6),

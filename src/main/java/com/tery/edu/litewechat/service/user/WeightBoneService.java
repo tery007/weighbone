@@ -117,7 +117,7 @@ public class WeightBoneService {
             boneInfo.setDayBZ(day <= 9 ? "初" + String.valueOf(day) : String.valueOf(day));
             boneInfo.setHourBZ(shichen);
 
-            boneInfo.setYlYear(year);
+            boneInfo.setYlYear(td);
             boneInfo.setYlMonth(String.valueOf(month));
             boneInfo.setYlDay(String.valueOf(day));
             boneInfo.setYlHour(boneInfo.getHourBZ());
