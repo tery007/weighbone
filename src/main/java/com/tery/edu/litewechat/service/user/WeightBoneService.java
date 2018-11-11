@@ -16,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by wanglei on 2018/10/18 上午9:51
@@ -39,14 +41,18 @@ public class WeightBoneService {
             setDays(WeightBoneInitUtil.initDays());
             setHours(WeightBoneInitUtil.initHours());
             setMinutes(WeightBoneInitUtil.initMinutes());
-            setBYear("1980");
-            setBMonth("1");
-            setBDay("1");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date());
+            setBYear(String.valueOf(calendar.get(Calendar.YEAR)));
+            setBMonth(String.valueOf(calendar.get(Calendar.MONTH) + 1));
+            setBDay(String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)));
             setBHour("0");
             setBMinute("0");
         }};
         return userReq;
     }
+
+
 
 
     /**
@@ -131,10 +137,10 @@ public class WeightBoneService {
                     + "日 " + boneInfo.getYlHour());
 
             boneInfo.setBoneInfoSep("(年："
-                    + yearWeight + "，月："
-                    + monthWeight + "，日："
-                    + dayWeight + "，时辰："
-                    + hourWeight+")");
+                    + yearWeight + "两，月："
+                    + monthWeight + "两，日："
+                    + dayWeight + "两，时辰："
+                    + hourWeight+"两)");
             log.info("==>weightBone infos:" + boneInfo.toString());
             return boneInfo;
 
@@ -161,6 +167,9 @@ public class WeightBoneService {
 //        WeightBoneService service = new WeightBoneService();
 //        BoneInfo info = service.weightBone(userReq);
 //        log.info("您的骨重是：" + info.toString());
+//        WeightBoneService service = new WeightBoneService();
+//        UserReq req = service.initUserReq();
+//        System.out.println(req);
 //    }
 
 }
