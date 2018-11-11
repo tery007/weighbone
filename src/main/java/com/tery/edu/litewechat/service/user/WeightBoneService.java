@@ -130,11 +130,11 @@ public class WeightBoneService {
                     + "月 " + boneInfo.getYlDay()
                     + "日 " + boneInfo.getYlHour());
 
-            boneInfo.setBoneInfoSep("您的骨重构成&nbsp;年："
-                    + yearWeight + "，&nbsp;月："
-                    + monthWeight + "，&nbsp;日："
-                    + dayWeight + "，&nbsp;时辰："
-                    + hourWeight);
+            boneInfo.setBoneInfoSep("您的骨重构成(年："
+                    + yearWeight + "，月："
+                    + monthWeight + "，日："
+                    + dayWeight + "，时辰："
+                    + hourWeight+")");
             log.info("==>weightBone infos:" + boneInfo.toString());
             return boneInfo;
 
