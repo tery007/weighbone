@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>骨重信息</title>
-    <meta http-equiv="X-UA-Compatible"
-          content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
@@ -14,7 +13,7 @@
 <div id=”views” class=”infoZone” th:object="${boneInfo}">
 
     <div class="main-body">
-        <h3 class="hd">当前算命者信息</h3>
+        <h3 class="hd">测试者信息</h3>
         <div class="infor" th:text="*{boneInfo}"></div>
         <div class="infor"><p>八字：<span th:text="*{boneInfoBZ}"></span></p></div>
         <div class="form-div">
