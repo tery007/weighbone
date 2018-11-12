@@ -9,9 +9,8 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     padding: 0;
 }
 input, button, textarea, select {
-    font-size: 100%;
+    font-size: 60%;
     border: groove;
-    background: center;
     -webkit-appearance: none;
 }
 body{
@@ -41,7 +40,7 @@ form{
 }
 
 .form-col .ipt {
-    margin-left: 3%;
+    margin-left: 10%;
     border: 1px solid #d1d5da;
     border-radius: 3px;
     background-color: #fff;
@@ -93,13 +92,12 @@ form{
 .sel-data {
     width: 100%;
     height: 70%;
-    font-size: 27px;
 }
 .sex-data {
-    margin-left: 4%;
-    width: 10%;
-    height: 100%;
-    font-size: 27px;
+    margin-left: 10%;
+    width: 40%;
+    height: 70%;
+    font-size: 18px;
 }
 
 .sel-a:nth-of-type(2) {
