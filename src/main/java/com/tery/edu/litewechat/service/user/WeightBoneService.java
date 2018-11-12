@@ -1,6 +1,5 @@
 package com.tery.edu.litewechat.service.user;
 
-import com.alibaba.fastjson.JSONObject;
 import com.tery.edu.litewechat.domain.weightBone.BoneInfo;
 import com.tery.edu.litewechat.domain.weightBone.UserReq;
 import com.tery.edu.litewechat.enums.bone.DayWeightEnum;
@@ -10,6 +9,7 @@ import com.tery.edu.litewechat.enums.bone.YearWeightEnum;
 import com.tery.edu.litewechat.util.calendar.CalendarUtil;
 import com.tery.edu.litewechat.util.calendar.ShiChenUtil;
 import com.tery.edu.litewechat.util.calendar.ZodiacUtil;
+import com.tery.edu.litewechat.util.weightBone.SkyBranchMonthUtil;
 import com.tery.edu.litewechat.util.weightBone.WeightBoneInitUtil;
 import com.tery.edu.litewechat.util.weightBone.BoneInfoUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -70,20 +70,22 @@ public class WeightBoneService {
             String solarBirthDay = getSolarDate(userReq);
             //转换为阴历生日yyyyMMdd
             String lunarBirthDay = CalendarUtil.solarToLunar(solarBirthDay);
+            //年份天干
+            String yearSkyBranch = CalendarUtil.yearSkyBranch(Integer.valueOf(year));
             //年份天干地支
-            String td = CalendarUtil.lunarYear2TD(Integer.valueOf(year));
+            String skyAndEarthBranch = CalendarUtil.lunarYear2SkyAndEarthBranch(Integer.valueOf(year));
             //出生年骨重
-            Double yearWeight = YearWeightEnum.yearWeightMap.get(td).getValue();
+            Double yearWeight = YearWeightEnum.yearWeightMap.get(skyAndEarthBranch).getValue();
 
             //阴历出生月
-            Integer month = CalendarUtil.getMonthBirthday(lunarBirthDay);
+            Integer lunarMonth = CalendarUtil.isolateMonth(lunarBirthDay);
             //出生月骨重
-            Double monthWeight = MonthWeightEnum.monthWeightEnumMap.get(month).getValue();
+            Double monthWeight = MonthWeightEnum.monthWeightEnumMap.get(lunarMonth).getValue();
 
             //阴历出生日
-            Integer day = CalendarUtil.getDayBirthday(lunarBirthDay);
+            Integer lunarDay = CalendarUtil.isolateDay(lunarBirthDay);
             //出生日骨重
-            Double dayWeight = DayWeightEnum.dayWeightEnumMap.get(day).getValue();
+            Double dayWeight = DayWeightEnum.dayWeightEnumMap.get(lunarDay).getValue();
 
             //出生小时
             String hour = userReq.getBHour();
@@ -112,14 +114,14 @@ public class WeightBoneService {
             //公历生日
             boneInfo.setGlBirthday(solarBirthDay);
             //年份天干地支
-            boneInfo.setYearTD(td);
-            boneInfo.setMonthBZ(String.valueOf(month));
-            boneInfo.setDayBZ(day <= 9 ? "初" + String.valueOf(day) : String.valueOf(day));
+            boneInfo.setYearTD(skyAndEarthBranch);
+            boneInfo.setMonthBZ(String.valueOf(lunarMonth));
+            boneInfo.setDayBZ(lunarDay <= 9 ? "初" + String.valueOf(lunarDay) : String.valueOf(lunarDay));
             boneInfo.setHourBZ(shichen);
 
-            boneInfo.setYlYear(td);
-            boneInfo.setYlMonth(String.valueOf(month));
-            boneInfo.setYlDay(String.valueOf(day));
+            boneInfo.setYlYear(skyAndEarthBranch);
+            boneInfo.setYlMonth(SkyBranchMonthUtil.getSkybranchMonth(yearSkyBranch, lunarMonth));
+            boneInfo.setYlDay(String.valueOf(lunarDay));
             boneInfo.setYlHour(boneInfo.getHourBZ());
 
             boneInfo.setBoneInfo(userReq.getUserName()

@@ -330,16 +330,29 @@ public class CalendarUtil {
     }
 
 
-    public static String lunarYear2TD(int year) {
+    public static String lunarYear2SkyAndEarthBranch(int year) {
         if (year < 1900 || year > 2099) {
             throw new RuntimeException("year not in[1900,2099]");
         }
-        int niangan = getNianGan(year);
-        int nianzhi = getNianZhi(year);
-        String tianGan = getTiangan(niangan);
-        String diZhi = getDizhi(nianzhi);
+        int skyBranch = getYearSkyBranch(year);
+        int earthBranch = getYearEarthBranch(year);
+        String tianGan = getTiangan(skyBranch);
+        String diZhi = getDizhi(earthBranch);
         return String.format("%s%s", tianGan, diZhi);
 
+    }
+
+    /**
+     * 年份的天干
+     * @param year
+     * @return
+     */
+    public static String yearSkyBranch(int year) {
+        if (year < 1900 || year > 2099) {
+            throw new RuntimeException("year not in[1900,2099]");
+        }
+        int skyBranch = getYearSkyBranch(year);
+        return getTiangan(skyBranch);
     }
 
     /**
@@ -348,22 +361,27 @@ public class CalendarUtil {
      * @param niangan
      * @return
      */
-    private static String getTiangan(int niangan) {
+    public static String getTiangan(int niangan) {
         return TianGanEnum.tianGanEnumMap.get(niangan).getValue();
     }
 
     /**
      * 年份地支
      *
-     * @param nianzhi
+     * @param earthBranch
      * @return
      */
-    private static String getDizhi(int nianzhi) {
-        return DiZhiEnum.diZhiEnumMap.get(nianzhi).getValue();
+    public static String getDizhi(int earthBranch) {
+        return DiZhiEnum.diZhiEnumMap.get(earthBranch).getValue();
     }
 
 
-    private static int getNianZhi(int year) {
+    /**
+     * 年份的地支索引
+     * @param year
+     * @return
+     */
+    public static int getYearEarthBranch(int year) {
         int n = year % 12;
         int nianzhi = 0;
         if (n > 3) {
@@ -374,7 +392,12 @@ public class CalendarUtil {
         return nianzhi;
     }
 
-    private static int getNianGan(int year) {
+    /**
+     * 年份的天干索引
+     * @param year
+     * @return
+     */
+    public static int getYearSkyBranch(int year) {
         int m = year % 10;
         int niangan = 0;
         if (m > 3) {
@@ -388,8 +411,8 @@ public class CalendarUtil {
 //    public static void main(String[] args) throws Exception {
 //        String lunar = solarToLunar("20101101");
 //        System.out.println(lunar);
-//        System.out.println(lunarYear2TD(1988));
-//        System.out.println(getDayBirthday("19880926"));
+//        System.out.println(lunarYear2SkyAndEarthBranch(1988));
+//        System.out.println(isolateDay("19880926"));
 //        System.out.println(age(lunar));
 //
 //    }
@@ -400,7 +423,7 @@ public class CalendarUtil {
      * @param lunarBirthDay
      * @return
      */
-    public static Integer getMonthBirthday(String lunarBirthDay) {
+    public static Integer isolateMonth(String lunarBirthDay) {
         if (StringUtils.isEmpty(lunarBirthDay)) {
             throw new RuntimeException("==>lunarBirthDay is wrong");
         }
@@ -413,7 +436,7 @@ public class CalendarUtil {
      * @param lunarBirthDay
      * @return
      */
-    public static Integer getDayBirthday(String lunarBirthDay) {
+    public static Integer isolateDay(String lunarBirthDay) {
         if (StringUtils.isEmpty(lunarBirthDay)) {
             throw new RuntimeException("==>lunarBirthDay is wrong");
         }
