@@ -24,15 +24,15 @@ public class SkyBranchMonthUtil {
             return null;
         }
         if (StringUtils.equals(yearSkyBranch, "甲") || StringUtils.equals(yearSkyBranch, "己")) {
-            return jiaJiMap.get(month);
+            return jiaJiMap.get(String.valueOf(month));
         } else if (StringUtils.equals(yearSkyBranch, "乙") || StringUtils.equals(yearSkyBranch, "庚")) {
-            return yiGengMap.get(month);
+            return yiGengMap.get(String.valueOf(month));
         } else if (StringUtils.equals(yearSkyBranch, "丙") || StringUtils.equals(yearSkyBranch, "辛")){
-            return bingXinMap.get(month);
+            return bingXinMap.get(String.valueOf(month));
         } else if (StringUtils.equals(yearSkyBranch, "丁") || StringUtils.equals(yearSkyBranch, "壬")) {
-            return dingRenMap.get(month);
+            return dingRenMap.get(String.valueOf(month));
         } else if (StringUtils.equals(yearSkyBranch, "戊") || StringUtils.equals(yearSkyBranch, "癸")) {
-            return wuGuiMap.get(month);
+            return wuGuiMap.get(String.valueOf(month));
         }
         return null;
     }

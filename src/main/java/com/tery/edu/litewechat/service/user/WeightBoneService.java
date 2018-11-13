@@ -9,6 +9,7 @@ import com.tery.edu.litewechat.enums.bone.YearWeightEnum;
 import com.tery.edu.litewechat.util.calendar.CalendarUtil;
 import com.tery.edu.litewechat.util.calendar.ShiChenUtil;
 import com.tery.edu.litewechat.util.calendar.ZodiacUtil;
+import com.tery.edu.litewechat.util.weightBone.DayPillarUtil;
 import com.tery.edu.litewechat.util.weightBone.SkyBranchMonthUtil;
 import com.tery.edu.litewechat.util.weightBone.WeightBoneInitUtil;
 import com.tery.edu.litewechat.util.weightBone.BoneInfoUtil;
@@ -121,7 +122,7 @@ public class WeightBoneService {
 
             boneInfo.setYlYear(skyAndEarthBranch);
             boneInfo.setYlMonth(SkyBranchMonthUtil.getSkybranchMonth(yearSkyBranch, lunarMonth));
-            boneInfo.setYlDay(String.valueOf(lunarDay));
+            boneInfo.setYlDay(DayPillarUtil.dayPillar(solarBirthDay));
             boneInfo.setYlHour(boneInfo.getHourBZ());
 
             boneInfo.setBoneInfo(userReq.getUserName()
