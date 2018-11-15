@@ -119,11 +119,14 @@ public class WeightBoneService {
             boneInfo.setMonthBZ(String.valueOf(lunarMonth));
             boneInfo.setDayBZ(lunarDay <= 9 ? "初" + String.valueOf(lunarDay) : String.valueOf(lunarDay));
             boneInfo.setHourBZ(shichen);
+            log.info("==>weightBone infos1:" + boneInfo.toString());
 
             boneInfo.setYlYear(skyAndEarthBranch);
             boneInfo.setYlMonth(SkyBranchMonthUtil.getSkybranchMonth(yearSkyBranch, lunarMonth));
             boneInfo.setYlDay(DayPillarUtil.dayPillar(solarBirthDay));
             boneInfo.setYlHour(boneInfo.getHourBZ());
+
+            log.info("==>weightBone infos2:" + boneInfo.toString());
 
             boneInfo.setBoneInfo(userReq.getUserName()
                     + " " + boneInfo.getSex()
@@ -134,6 +137,8 @@ public class WeightBoneService {
                     + "时" + userReq.getBMinute()
                     + "分" + boneInfo.getAge()
                     + "岁, 属" + boneInfo.getShuXiang());
+            log.info("==>weightBone infos3:" + boneInfo.toString());
+
             boneInfo.setBoneInfoBZ(boneInfo.getYlYear()
                     + "年" + boneInfo.getYlMonth()
                     + "月 " + boneInfo.getYlDay()
@@ -144,7 +149,7 @@ public class WeightBoneService {
                     + monthWeight + "两，日："
                     + dayWeight + "两，时辰："
                     + hourWeight+"两)");
-            log.info("==>weightBone infos:" + boneInfo.toString());
+            log.info("==>weightBone infos4:" + boneInfo.toString());
             return boneInfo;
 
         } catch (Exception e) {
@@ -159,20 +164,18 @@ public class WeightBoneService {
                 + (userReq.getBDay().length() > 1 ? userReq.getBDay() : "0" + userReq.getBDay());
     }
 
-//    public static void main(String[] args) {
-//        UserReq userReq=new UserReq(){{
-//            setBYear("1988");
-//            setBMonth("10");
-//            setBDay("15");
-//            setBHour("0");
-//            setBMinute("30");
-//        }};
-//        WeightBoneService service = new WeightBoneService();
-//        BoneInfo info = service.weightBone(userReq);
-//        log.info("您的骨重是：" + info.toString());
-//        WeightBoneService service = new WeightBoneService();
-//        UserReq req = service.initUserReq();
-//        System.out.println(req);
-//    }
+    public static void main(String[] args) {
+        UserReq userReq=new UserReq(){{
+            setGender(1);
+            setBYear("2012");
+            setBMonth("11");
+            setBDay("12");
+            setBHour("0");
+            setBMinute("0");
+        }};
+        WeightBoneService service = new WeightBoneService();
+        BoneInfo info = service.weightBone(userReq);
+        log.info("您的骨重是：" + info.toString());
+    }
 
 }
