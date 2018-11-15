@@ -14,6 +14,7 @@ public class DayPillarUtil {
 
 
     /**
+     * 当余数为0时，则其取值为最后一个（比如十天干中，10%10=0，那么此天干应该为癸）
      * 输入日期【格式为：'yyyyMMdd'】
      * 输出日柱
      * @param date
