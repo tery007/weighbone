@@ -24,7 +24,8 @@ public class DayPillarUtil {
         int year = Integer.valueOf(date.substring(0, 4));
         int r = 5 * (year - 1900) + (year - 1900 + 3) / 4 + 9 + dayOfYear(date);
         int u = r % 60;
-        return CalendarUtil.getTiangan(u % 10) + CalendarUtil.getDizhi(u % 12);
+        return CalendarUtil.getTiangan((u % 10) == 0 ? 10 : (u % 10))
+                + CalendarUtil.getDizhi((u % 12) == 0 ? 12 : u % 12);
     }
 
     public static int dayOfYear(String date) throws Exception{
