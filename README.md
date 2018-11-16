@@ -13,9 +13,11 @@ http://golum.wang/weight/index.html
 
 <center>
 <img src="http://golum.wang/weight-index.jpeg" width="25%" height="25%" />
+  称骨首页
 </center>
 
 <center>
-<img src="http://golum.wang/weight-info.jpeg" width="25%" height="35%" />
+<img src="http://golum.wang/weight-info.jpeg" width="25%" height="100%" />
+  称骨信息
 </center>
 
