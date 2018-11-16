@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  **/
 @Slf4j
 @Controller
-@RequestMapping(value = "/wb")
+@RequestMapping(value = "/weight")
 public class WeightBoneController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class WeightBoneController {
      * @param map
      * @return
      */
-    @RequestMapping(value = "/init",method = RequestMethod.GET)
+    @RequestMapping(value = "/index.html",method = RequestMethod.GET)
     public String index(ModelMap map) {
         UserReq userReq =weightBoneService.initUserReq();
         map.put("userReq", userReq);

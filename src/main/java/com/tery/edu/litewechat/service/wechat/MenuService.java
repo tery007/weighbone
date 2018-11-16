@@ -43,7 +43,7 @@ public class MenuService implements InitializingBean {
 
             MenuButton main1_sub1 = new MenuButton();
             main1_sub1.setType(MenuType.VIEW);
-            main1_sub1.setUrl(oauthAPI.getOauthPageUrl("http://golum.wang/wb/init", OauthScope.SNSAPI_USERINFO, "STATE"));
+            main1_sub1.setUrl(oauthAPI.getOauthPageUrl("http://golum.wang/weight/index.html", OauthScope.SNSAPI_USERINFO, "STATE"));
             main1_sub1.setName("称骨");
             main1_sub1.setKey("main1_sub");
 

@@ -8,5 +8,5 @@
 #### 2、三方插件
 * fast-weixin
 #### 3、访问地址：
-http://golum.wang/wb/init
-项目是放在微信公众号中展示，在网页中展示效果比较乱。
+http://golum.wang/weight/index.html
+微信公众号展示效果：
