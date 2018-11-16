@@ -10,5 +10,5 @@
 #### 3、访问地址：
 http://golum.wang/weight/index.html
 ##### 微信公众号展示效果：
-* ![称骨首页]http://golum.wang/weight-index.jpeg
-* ![称骨结果]http://golum.wang/weight-info.jpeg
+* ![称骨首页](http://golum.wang/weight-index.jpeg)
+* ![称骨结果](http://golum.wang/weight-info.jpeg)
