@@ -13,7 +13,10 @@ http://golum.wang/weight/index.html
 
 <center>
 <img src="http://golum.wang/weight-index.jpeg" width="25%" height="25%" />
+</center>
+
+<center>
+<img src="http://golum.wang/weight-info.jpeg" width="25%" height="25%" />
 $ $
-Figure 1. Lena
 </center>
 
