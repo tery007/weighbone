@@ -19,7 +19,7 @@ spring:
   profiles: local
   cloud:
     consul:
-      host: 47.98.116.92
+      host: 172.16.214.30
       port: 8500
       config:
         token: 9a7d443a-055e-6a7b-31be-bd6323f37723
