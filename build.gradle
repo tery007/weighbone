@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.3.RELEASE'
+        springBootVersion = '2.0.2.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -38,10 +38,12 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.3.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.2.RELEASE'
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
     compile group: 'org.thymeleaf', name: 'thymeleaf'
+    compile ('org.springframework.cloud:spring-cloud-netflix-turbine:2.0.2.RELEASE')
+    compile ('org.springframework.cloud:spring-cloud-starter-consul-discovery:2.0.2.RELEASE')
     compile fileTree(dir:'src/main/java/com/tery/edu/litewechat/lib',includes:['*.jar'])
     compileOnly "org.springframework.boot:spring-boot-configuration-processor"
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.22'

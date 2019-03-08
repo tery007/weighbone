@@ -1,0 +1,55 @@
+spring:
+  cloud:
+    consul:
+      enabled: true
+      discovery:
+        tags: urlprefix-/${spring.application.name}
+        healthCheckPath: /health-check
+        healthCheckInterval: 20s
+        instanceId: ${spring.application.name}:${spring.profiles.active}
+        prefer-ip-address: true
+      config:
+        format: YAML
+        prefix: config
+        defaultContext: ${spring.application.name}
+        profileSeparator: '::'
+
+---
+spring:
+  profiles: local
+  cloud:
+    consul:
+      host: 47.98.116.92
+      port: 8500
+      config:
+        token: 9a7d443a-055e-6a7b-31be-bd6323f37723
+
+---
+spring:
+  profiles: dev
+  cloud:
+    consul:
+      host: 47.98.116.92
+      port: 8500
+      config:
+        token: 9a7d443a-055e-6a7b-31be-bd6323f37723
+
+---
+spring:
+  profiles: test
+  cloud:
+    consul:
+      host: 47.98.116.92
+      port: 8500
+      config:
+        token: f1fb1590-8c40-1243-923a-1290a10ecb1b
+
+---
+spring:
+  profiles: online
+  cloud:
+    consul:
+      host: 47.98.116.92
+      port: 8500
+      config:
+        token: d4890759-92f2-e5b0-c146-61237eb68c35
